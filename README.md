@@ -1,214 +1,185 @@
-# NEXARA — Agence Digitale 360° & IA
+# NEXARA — Agence Digitale 360° & IA | Algérie
 
-> "Digitalisons l'Algérie, ensemble."
+> **Digitalisons l'Algérie, ensemble.**
 
-Site web premium complet pour NEXARA, agence digitale 360° basée à Alger, Algérie.
-
----
-
-## 🚀 URL de Prévisualisation
-
-**Site Live** : https://3000-igji2t4cvvj9y7p1e6t78-2e1b9533.sandbox.novita.ai
+Site web premium pour l'agence digitale NEXARA — première agence 360° & IA positionnée sur le marché algérien avec des standards internationaux.
 
 ---
 
-## ✅ Fonctionnalités Implémentées
+## 🌐 URLs
 
-### Pages Publiques
-- **Accueil** — Hero section, statistiques, services, process, portfolio, pricing, témoignages, blog preview, CTA
-- **Services Hub** — Présentation de tous les services avec tarifs
-- **Tarifs** — Plans Starter / Business / Premium IA / Enterprise + Add-ons + FAQ
-- **Portfolio** — Galerie de projets avec filtres par catégorie
-- **Blog** — Articles avec catégories, temps de lecture, vues
-- **À Propos** — Mission, vision, valeurs, équipe, contexte marché DZ
-- **Contact** — Formulaire + coordonnées + WhatsApp CTA
-- **Devis Multi-étapes** — Formulaire en 4 étapes (profil → projet → détails → confirmation)
-- **Mentions Légales** — Conformité Loi n°18-07 Algérie
-- **Politique de Confidentialité** — RGPD-like + Loi DZ
-
-### Pages Services Individuelles
-- `/services/chatbots-ia`
-- `/services/sites-web`
-- `/services/ecommerce`
-- `/services/applications-web`
-- `/services/branding`
-- `/services/automatisation`
-
-### Dashboard Admin (`/admin`)
-- Tableau de bord avec KPIs (Leads, Devis, Projets, Articles)
-- Vue des derniers leads et demandes de devis
-- Sidebar navigation complète
-- Pages : Leads / Devis / Portfolio / Blog / Témoignages / Paramètres
-
-### API Backend
-- `POST /api/contact` — Messages de contact → DB
-- `POST /api/devis` — Demandes de devis → DB
-- `POST /api/newsletter` — Inscriptions newsletter → DB
-
-### Design System
-- Dark premium tech (#0D0D1A, #141428)
-- Accent violet (#7C3AED) + cyan (#06B6D4) + or (#F59E0B) + vert (#10B981)
-- Typographies Poppins (titres) + Inter (corps)
-- Composants : glass-card, btn-primary, btn-whatsapp, gradient-text, hexagon, grid-pattern
-- WhatsApp bouton flottant sur toutes les pages
-
----
-
-## 🛠 Stack Technique
-
-| Technologie | Rôle |
+| Environnement | URL |
 |---|---|
-| Next.js 15+ (App Router) | Framework full-stack |
-| TypeScript | Typage strict |
-| Tailwind CSS v4 | Styling utility-first |
-| Prisma 5 + SQLite | ORM + Base de données |
-| Lucide React | Icônes |
-| PM2 | Gestion du processus en production |
+| **Preview sandbox** | https://3000-igji2t4cvvj9y7p1e6t78-2e1b9533.sandbox.novita.ai |
+| **GitHub** | https://github.com/Abderrahmane-009/Nexara |
+| **Production** | À déployer sur Vercel + domaine custom |
 
 ---
 
-## 📁 Structure du Projet
+## ✅ Pages Complétées (26 pages)
 
-```
-webapp/
-├── src/
-│   ├── app/
-│   │   ├── (public)/           # Pages publiques
-│   │   │   ├── services/       # Hub + pages individuelles
-│   │   │   ├── portfolio/
-│   │   │   ├── tarifs/
-│   │   │   ├── about/
-│   │   │   ├── blog/
-│   │   │   ├── contact/
-│   │   │   ├── devis/          # Formulaire multi-étapes
-│   │   │   ├── mentions-legales/
-│   │   │   └── confidentialite/
-│   │   ├── (admin)/            # Dashboard admin
-│   │   │   └── admin/          # Layout + pages CRUD
-│   │   ├── api/               # Routes API
-│   │   │   ├── contact/
-│   │   │   ├── devis/
-│   │   │   └── newsletter/
-│   │   ├── layout.tsx         # Layout racine + SEO metadata
-│   │   ├── page.tsx           # Page d'accueil
-│   │   └── globals.css        # Design system complet
-│   ├── components/
-│   │   ├── layout/            # Navbar, Footer
-│   │   ├── sections/          # Toutes les sections homepage
-│   │   └── ui/               # Composants UI réutilisables
-│   ├── lib/
-│   │   ├── prisma.ts          # Client Prisma singleton
-│   │   └── utils.ts           # Utilitaires (cn, slugify, WhatsApp)
-│   └── types/index.ts         # Types TypeScript globaux
-├── prisma/
-│   ├── schema.prisma          # Schéma base de données
-│   └── dev.db                 # SQLite local (dev)
-├── ecosystem.config.cjs       # Config PM2
-├── .env                       # Variables d'environnement
-└── package.json
-```
-
----
-
-## 💾 Schéma de Base de Données
-
-| Table | Description |
+### Pages publiques
+| Route | Description |
 |---|---|
-| `User` | Administrateurs (NextAuth) |
-| `Lead` | Prospects / formulaires de contact |
-| `Devis` | Demandes de devis |
-| `Project` | Portfolio projets |
-| `Article` | Blog articles |
-| `Testimonial` | Témoignages clients |
-| `Newsletter` | Abonnés newsletter |
-| `ContactMessage` | Messages de contact bruts |
+| `/` | Accueil (10 sections : Hero, Stats, Services, Why NEXARA, Process, Portfolio, Pricing, Testimonials, Blog, CTA) |
+| `/services` | Hub services (6 services visuels) |
+| `/services/chatbots-ia` | Chatbots IA — cas d'usage, packages, FAQ |
+| `/services/sites-web` | Création sites web — types, features, témoignages |
+| `/services/ecommerce` | E-Commerce — spécificités marché algérien |
+| `/services/applications-web` | Applications web métier — tech stack, process |
+| `/services/branding` | Branding & identité visuelle |
+| `/services/automatisation` | Automatisation & workflows IA |
+| `/portfolio` | Portfolio filtrable (6 projets) |
+| `/tarifs` | Grille tarifaire (Starter/Business/Premium IA/Enterprise) |
+| `/about` | À propos — mission, vision, valeurs, équipe |
+| `/blog` | Blog listing (6 articles) |
+| `/blog/[slug]` | Articles détaillés avec contenu complet |
+| `/contact` | Contact + formulaire + WhatsApp |
+| `/devis` | Formulaire devis multi-étapes (4 étapes) |
+| `/mentions-legales` | Mentions légales (DZ) |
+| `/confidentialite` | Politique de confidentialité (Loi 18-07 DZ) |
+
+### Admin
+| Route | Description |
+|---|---|
+| `/admin` | Dashboard KPI (leads, devis, projets, articles) |
+
+### API Routes
+| Route | Description |
+|---|---|
+| `POST /api/contact` | Formulaire de contact → DB |
+| `POST /api/devis` | Demande de devis → DB |
+| `POST /api/newsletter` | Inscription newsletter → DB |
 
 ---
 
-## 🔧 Installation & Démarrage
+## 🎨 Design System
+
+**Palette :**
+- Background : `#0D0D1A` (dark navy)
+- Cards : `#141428`
+- Violet accent : `#7C3AED`
+- Cyan accent : `#06B6D4`
+- Gold accent : `#F59E0B`
+- Green : `#10B981`
+
+**Typographies :**
+- Titres : Poppins (700-900)
+- Corps : Inter (400-600)
+
+**Composants :** glass-card, gradient-text, btn-primary/secondary/gold/whatsapp, section-badge, hexagon, grid-pattern
+
+---
+
+## 🗄️ Architecture Base de Données (Prisma + SQLite dev / PostgreSQL prod)
+
+**Modèles :**
+- `Lead` — prospects entrants
+- `Devis` — demandes de devis complètes
+- `Project` — réalisations portfolio
+- `Article` — articles de blog
+- `Testimonial` — témoignages clients
+- `Newsletter` — abonnés newsletter
+- `User` — administrateurs
+- `ContactMessage` — messages formulaire contact
+
+---
+
+## 🔧 Stack Technique
+
+- **Framework** : Next.js 15 (App Router)
+- **Langage** : TypeScript strict
+- **Styling** : Tailwind CSS v4 + CSS custom
+- **ORM** : Prisma v5.22 + SQLite (dev) / PostgreSQL (prod)
+- **Auth** : NextAuth.js (admin)
+- **Process** : PM2 (sandbox)
+- **Icônes** : Lucide React
+- **Déploiement** : Vercel-ready
+
+---
+
+## 🚀 Installation & Déploiement
+
+### Développement local
 
 ```bash
-# 1. Installer les dépendances
+# Cloner
+git clone https://github.com/Abderrahmane-009/Nexara.git
+cd Nexara
+
+# Installer dépendances
 npm install
 
-# 2. Copier les variables d'environnement
-cp .env.local .env
-# Éditez .env avec vos vraies valeurs
+# Configurer les env vars
+cp .env.example .env.local
+# Remplir les valeurs
 
-# 3. Créer la base de données
+# Base de données
 npx prisma db push
 
-# 4. Build de production
-npm run build
-
-# 5. Démarrer avec PM2
-pm2 start ecosystem.config.cjs
-
-# Ou en développement
+# Lancer
 npm run dev
 ```
 
----
-
-## 🌐 Variables d'Environnement
+### Variables d'environnement requises
 
 ```env
-DATABASE_URL="file:./prisma/dev.db"
-NEXTAUTH_SECRET="votre-secret-très-long-et-sécurisé"
-NEXTAUTH_URL="https://nexara.dz"
+DATABASE_URL="postgresql://user:pass@host/nexara"  # Production
+NEXTAUTH_SECRET="secret-fort-64-chars"
+NEXTAUTH_URL="https://votre-domaine.com"
 ADMIN_EMAIL="admin@nexara.dz"
-ADMIN_PASSWORD="Votre@MotDePasse!"
-EMAIL_HOST="smtp.gmail.com"
-EMAIL_PORT=587
-EMAIL_USER="contact@nexara.dz"
-EMAIL_PASS="votre-app-password"
-EMAIL_FROM="NEXARA <contact@nexara.dz>"
-EMAIL_TO="admin@nexara.dz"
+ADMIN_PASSWORD="MotDePasseFort!"
 WHATSAPP_NUMBER="+213XXXXXXXXX"
+EMAIL_FROM="NEXARA <contact@nexara.dz>"
 ```
 
----
-
-## 🚀 Déploiement Vercel
+### Déploiement Vercel
 
 ```bash
-# 1. Installer Vercel CLI
-npm i -g vercel
+# 1. Créer projet sur vercel.com depuis GitHub Abderrahmane-009/Nexara
+# 2. Configurer les variables d'environnement dans Vercel Dashboard
+# 3. Créer DB PostgreSQL sur neon.tech, mettre DATABASE_URL
+# 4. Déployer
+npx vercel --prod
 
-# 2. Déployer
-vercel
+# 5. Ajouter domaine custom dans Vercel Settings > Domains
+```
 
-# 3. Configurer les variables d'environnement dans Vercel Dashboard
-# En production, utiliser Vercel Postgres ou Neon au lieu de SQLite
+### Configuration DNS Namecheap
 
-# 4. Pour PostgreSQL en production, modifier prisma/schema.prisma :
-# provider = "postgresql"
-# url = env("DATABASE_URL")
+Pour votre domaine custom :
+```
+A Record  @    76.76.21.21
+CNAME     www  cname.vercel-dns.com
 ```
 
 ---
 
-## 📋 Prochaines Étapes Recommandées
+## 📋 Prochaines Étapes
 
-1. **Authentification Admin** : Activer NextAuth.js v5 pour l'accès sécurisé au dashboard
-2. **Pages Services Individuelles** : Créer des pages détaillées pour chaque service
-3. **Pages de Blog Dynamiques** : Route `/blog/[slug]` avec contenu réel
-4. **Upload d'images** : Intégrer Cloudinary pour les images du portfolio
-5. **Emails Automatiques** : Configurer Nodemailer/Resend pour les notifications
-6. **SEO Avancé** : Sitemap XML, schema.org, Open Graph complet
-7. **Analytics** : Intégrer Google Analytics / Plausible
-8. **Base de données Production** : Migrer vers PostgreSQL (Neon/Supabase)
-9. **Domaine** : Configurer le domaine nexara.dz
-10. **Internationalisation** : Ajouter le support arabe (ar) et anglais (en)
-
----
-
-## 📞 Contact NEXARA
-
-- **Email** : contact@nexara.dz
-- **WhatsApp** : +213 XX XX XX XX
-- **Localisation** : Alger, Algérie
+- [ ] Déployer sur Vercel
+- [ ] Créer DB PostgreSQL sur Neon
+- [ ] Configurer SMTP (Gmail App Password ou Resend)
+- [ ] Insérer vrai numéro WhatsApp dans env
+- [ ] Activer NextAuth pour sécuriser `/admin`
+- [ ] Obtenir domaine nexara.dz
+- [ ] Configurer DNS Namecheap → Vercel
+- [ ] Ajouter vraies photos portfolio
+- [ ] Ajouter témoignages clients réels
 
 ---
 
-*NEXARA — Excellence digitale pour les entreprises algériennes.*
+## 💡 Conversion Logic
+
+1. **Discovery** : SEO organique + Ads
+2. **Lead Magnet** : Audit gratuit, CTA sur chaque page
+3. **Qualification** : Formulaire devis 4 étapes
+4. **Nurturing** : Email séquence automatique
+5. **Closing** : WhatsApp + appel
+6. **Fidélisation** : Support continu
+
+---
+
+**Dernière mise à jour** : Mars 2026 — v2.0  
+**Statut** : ✅ Prêt pour déploiement production  
+**Agence** : NEXARA, Alger, Algérie
